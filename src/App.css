@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("../src/fonts/TR-909.ttf");
+}
+* {
+  margin: 0;
+  font-family: "MyFont", sans-serif;
+}
+
+body {
+  font-size: 24px;
+  background-color: #45494d;
+  
+}
+
+#drum-machine {
+  margin: 15px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  display: grid;
+  padding: 10px;
+  grid-gap: 15px;
+  margin-top: 40px;
+  border: 1px solid black;
+  border-radius: 15px;
+  grid-template-columns: 1fr;
+  background-color: rgb(54, 53, 53);
+  position: relative; 
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-gap: 15px;
+}
+
+.drums {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.drums .drum-pad {
+  width: 100%;
+  height: 80px;
+  outline: none;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 5px rgba(255, 252, 252, 0.3);
+}
+
+.drums .drum-pad.active {
+  background-color: #00ff95; 
+  box-shadow: 0 0 15px #00ffea;
+}
+
+.control button {
+  border: none;
+  color:#b1c2d3;;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  background-color: #76818d;
+}
+
+#display {
+  text-align: center;
+  border-radius: 5px;
+  height: 150px;
+  background-color: #b1c2d3;
+  color: #76818d;
+  margin: 2px;
+  position: relative;
+  padding-top: 5px;
+}
+
+h3 {
+  color: #76818d;
+  text-align: center;
+  position: relative; 
+  top: -85px;
+  font-size: 25px;
+}
+
+#bank-name {
+  color:#76818d;
+  text-align: center;
+  position: relative; 
+  top: -40px;
+  font-size: 15px;
+}
+
+.soundbank-button {
+  position: absolute;
+  top: 235px;
+  color:#76818d;
+}
+.soundbank-button:hover {
+  color: #00ffcc;
+}
+
+.volume-control {
+  position: absolute;
+  align-items: center;
+  top: 195px;
+  left: 400px;
+  color:#76818d;
+}
+
+.volume-bar {
+  width: 180%;
+}
+
+.volume-icon {
+  margin: 0 4px;
+  position: absolute;
+  left: 250px;
+  top: -5px;
+}
+
+.volume-icon-muted {
+  order: -1;
+  position: absolute;
+  right: 140px;
+  top: -5px;
+  color:#76818d;
+}
+
+.power-button {
+  position: absolute;
+  top: 230px;
+  right: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.power-button:hover {
+  color: #00ffcc;
+}
+
+.power-button.glow {
+  animation: glowAnimation 10s infinite;
+  color: #00ffd9;
+}
+
+#drum-machine .drums .drum-pad:nth-child(1) {
+ background-color: #4E7FB2; 
+}
+
+#drum-machine .drums .drum-pad:nth-child(2) {
+  background-color: #5CAEBA; 
+}
+
+#drum-machine .drums .drum-pad:nth-child(3) {
+  background-color: #8ED2C9; 
+}
+
+#drum-machine .drums .drum-pad:nth-child(4) {
+  background-color: #D2E1B9; 
+}
+
+#drum-machine .drums .drum-pad:nth-child(5) {
+  background-color: #E9B44C; 
+}
+
+#drum-machine .drums .drum-pad:nth-child(6) {
+  background-color: #F89D6D; 
+}
+
+#drum-machine .drums .drum-pad:nth-child(7) {
+  background-color: #ED6B48; 
+}
+
+#drum-machine .drums .drum-pad:nth-child(8) {
+  background-color: #C9424D;
+}
+
+#drum-machine .drums .drum-pad:nth-child(9) {
+  background-color: #993E56; 
+}
+
+@keyframes glowAnimation {
+  0% {
+    box-shadow: 0 0 5px #00ff95;
+  }
+  50% {
+    box-shadow: 0 0 20px #00ffea;
+  }
+  100% {
+    box-shadow: 0 0 5px #00aaff;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    width: 680px;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
