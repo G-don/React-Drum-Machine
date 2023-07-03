@@ -1,4 +1,6 @@
 ##Drum Machine
+![image]([http://url/to/img.png](https://github.com/G-don/React-Drum-Machine/blob/main/VISUALS/1.png))
+
 
 ##Description
 
