@@ -1,5 +1,8 @@
 ##Drum Machine
+
 ![image](https://github.com/G-don/React-Drum-Machine/blob/main/VISUALS/1.png)
+![image](https://github.com/G-don/React-Drum-Machine/blob/main/VISUALS/2.png)
+![image](https://github.com/G-don/React-Drum-Machine/blob/main/VISUALS/3.png)
 
 
 ##Description
