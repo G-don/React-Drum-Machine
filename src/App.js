@@ -5,34 +5,43 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { soundsGroup, soundsName } from './Sounds.js';
 
 
-const DrumPad = ({
-  play,
-  sound: { id, key, url, keyCode },
-  power
-}) => {
+const DrumPad = ({ play, sound: { id, key, url, keyCode }, power }) => {
   const handleKeyDown = (e) => {
-  if (power && keyCode === e.keyCode) {
-    const audio = document.getElementById(key);
-    play(key, id);
-    const drumPad = document.getElementById(keyCode);
-    drumPad.classList.add("active");
-    document.activeElement.blur(); 
-    setTimeout(() => {
-      drumPad.classList.remove("active");
-    }, 200);
-  }
-};
+    if (power && keyCode === e.keyCode) {
+      play(key, id);
+      const drumPad = document.getElementById(keyCode);
+      drumPad.classList.add("active");
+      document.activeElement.blur();
+      setTimeout(() => {
+        drumPad.classList.remove("active");
+      }, 200);
+    }
+  };
+
+  const handleClick = () => {
+    if (power) {
+      play(key, id);
+      const drumPad = document.getElementById(keyCode);
+      drumPad.classList.add("active");
+      setTimeout(() => {
+        drumPad.classList.remove("active");
+      }, 200);
+    }
+  };
 
   React.useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
-   
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, [power]);
 
   return (
     <button
       id={keyCode}
       className="drum-pad"
-      onClick={handleKeyDown}
+      onClick={handleClick}
       disabled={!power}
     >
       <audio className="clip" src={url} id={key} />
@@ -117,7 +126,8 @@ const App = () => {
   const [soundType, setSoundType] = React.useState("heaterKit");
   const [sounds, setSounds] = React.useState(soundsGroup[soundType]);
   
-  const play = (key, sound) => {
+
+const play = (key, sound) => {
     setSoundName(sound)
     const audio = document.getElementById(key);
     
