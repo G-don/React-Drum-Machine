@@ -4,6 +4,8 @@
 
 ![image](https://github.com/G-don/React-Drum-Machine/blob/main/VISUALS/3.png)
 
+##TechStack
+
 <p align="left">
 <img src="https://github.com/Drete457/Drete457/blob/master/icons/javascript-original.svg" alt="javascript" width="60" height="60"/>
 <img src="https://github.com/Drete457/Drete457/blob/master/icons/react-original-wordmark.svg" alt="javascript" width="60" height="60"/>
